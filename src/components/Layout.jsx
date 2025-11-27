@@ -70,8 +70,6 @@ const navigation = [
     links: [
       { title: 'getUSDTBalanceOf', href: '/docs/get-usdt-balance-of' },
       { title: 'formatTokenAmount', href: '/docs/format-token-amount' },
-      { title: 'calculateFee', href: '/docs/calculate-fee' },
-      { title: 'formatFeeCalculation', href: '/docs/format-fee-calculation' },
       { title: 'getMaturityInfo', href: '/docs/get-maturity-info' },
       { title: 'getEscrowStatusLabel', href: '/docs/get-escrow-status-label' },
       { title: 'clearAllEscrowCache', href: '/docs/clear-all-escrow-cache' },
@@ -82,22 +80,9 @@ const navigation = [
     links: [
       { title: 'watchUserEscrows', href: '/docs/watch-user-escrows' },
       { title: 'watchEscrowCreated', href: '/docs/watch-escrow-created' },
-      { title: 'watchPaymentDeposited', href: '/docs/watch-payment-deposited' },
-      { title: 'watchDisputeStarted', href: '/docs/watch-dispute-started' },
-      { title: 'watchDeliveryConfirmed', href: '/docs/watch-delivery-confirmed' },
-      { title: 'watchDisputeResolved', href: '/docs/watch-dispute-resolved' },
-      { title: 'watchDisputeMessagePosted', href: '/docs/watch-dispute-message-posted' },
-      { title: 'watchRequestCancel', href: '/docs/watch-request-cancel' },
-      { title: 'watchCanceled', href: '/docs/watch-canceled' },
       { title: 'watchAllEvents', href: '/docs/watch-all-events' },
     ],
-  },
-  {
-    title: 'Contributing',
-    links: [
-      { title: 'How to contribute', href: '/docs/contributing' },
-    ],
-  },
+  }
 ]
 
 function GitHubIcon(props) {

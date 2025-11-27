@@ -82,5 +82,8 @@ You can now call any SDK method:
 ```ts
 const escrows = await sdk.getEscrows();
 const escrow = await sdk.getEscrowByIdParsed(5n);
-await sdk.deposit(walletClient, 5n);```
+await sdk.deposit(walletClient, 5n);
+```
 
+#### Pro Tip
+You can set up your own database to manage the data independently. While The Graph specializes in indexing blockchain events and providing efficient querying, managing your own database gives you full control over data structure, storage, and custom queries.

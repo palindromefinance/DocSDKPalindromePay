@@ -64,6 +64,84 @@ The flow is simple: the customer places an order and pays, the merchant delivers
 At the Palindrome Crypto Esrow Dashboard customers can confirm delivery, cancel the order, or open a dispute. 
 Merchants can withdraw funds after successful verification, respond to disputes, and request order cancellation, which the customer can then approve.
 
-Soon more..
+
+### Integration code Button Widget
+
+Add this code to your product page, checkout page or booking confirmation:
+
+[Codepen](https://codepen.io/palindromefinance/pen/LENgrgO)
+
+```html
+<div style="display: flex; justify-content: center; margin: 20px 0;">
+  <button class="palindrome-checkout-button" data-palindrome-seller="your address" data-palindrome-amount="100" data-palindrome-title="My Product" style="
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 200px !important;
+      padding: 12px 16px !important;
+      font-size: 14px !important;
+      border: none !important;
+      border-radius: 8px !important;
+      background: linear-gradient(135deg, #6e8efb, #a777e3) !important;
+      color: white !important;
+      cursor: pointer !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+      transition: all 0.2s ease !important;
+    " onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'">
+    <img src="https://www.palindromefinance.com/favicon-32x32.png" alt="Palindrome" style="width: 20px; height: 20px; border-radius: 3px; flex-shrink: 0;" />
+    Palindrome Pay
+  </button>
+</div>
+
+<script src="https://palindromefinance.com/widget.js" data-palindrome-endpoint="https://palindromefinance.com/checkout" defer></script>
+```
+
+### Integration code Button Widget (Shopify)
+
+Place this in product.liquid or a product section:
+
+```html
+<button 
+  class="palindrome-checkout-button" 
+  data-palindrome-seller="your address" 
+  data-palindrome-amount="{{ product.price | divided_by: 100 }}" 
+  data-palindrome-title="{{ product.title | escape }}"
+  style="
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 200px !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    background: linear-gradient(135deg, #6e8efb, #a777e3) !important;
+    color: white !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    transition: all 0.2s ease !important;
+  "
+  onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'"
+  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'"
+>
+  <img
+    src="https://www.palindromefinance.com/favicon-32x32.png"
+    alt="Palindrome"
+    style="width: 20px; height: 20px; border-radius: 3px; flex-shrink: 0;"
+  />
+  Pay with Crypto (Escrow)
+</button>
+
+<script 
+  src="https://palindromefinance.com/widget.js" 
+  data-palindrome-endpoint="https://palindromefinance.com/checkout" 
+  defer
+></script>
+
+
+````
+
 ---
 

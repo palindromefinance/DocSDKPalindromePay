@@ -57,7 +57,12 @@ With the widget, you can add ready‑made Crypto Pay with buttons to your shop o
 
 When the button is clicked, your customer is redirected to the decentralized Checkout System, where they connect a wallet, review the order and complete a secure crypto payment. You can access the checkout at: [Palindrome Crypto Pay Checkout System](https://palindromefinance.com/checkout)
 
-Either with the SDK or the Widget, you and your customers can view and manage every payment transactions through the [Palindrome Crypto Escrow Dashboard](https://palindromefinance.com/crypto-escrow). The typical flow is simple: the customer places an order and pays into escrow, the merchant delivers the goods or services, the customer confirms everything is OK, and then the merchant withdraws the funds. Your customer can there confirm, cancel the order, open a dispute and on the other side you can withdraw the funds, also open a dispute and confirm the request from customer to cancel.
+Either with the SDK or the Widget, you and your customers can view and manage every payment transactions through the [Palindrome Crypto Escrow Dashboard](https://palindromefinance.com/crypto-escrow). 
+
+The flow is simple: the customer places an order and pays, the merchant delivers the goods or services, and the customer confirms that everything is satisfactory. Once confirmed, the merchant can withdraw the funds.
+
+At the Palindrome Crypto Esrow Dashboard customers can confirm delivery, cancel the order, or open a dispute. 
+Merchants can withdraw funds after successful verification, respond to disputes, and request order cancellation, which the customer can then approve.
 
 Soon more..
 ---

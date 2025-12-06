@@ -1,10 +1,12 @@
 ---
-title: Getting started
-pageTitle: Palindrome - Decentralized Crypto Pay Documentation.
-description: Palindrome Finance is a crypto payment system with escrow service focused on secure cryptocurrency transactions, providing solutions that enhance trust and protection in digital payments. Palindrome Finance offers an SDK that can be integrated into e-commerce stores, real estate platforms, and various booking systems, allowing users to add crypto-based escrow payments seamlessly to their existing workflows. This enables businesses to benefit from secure, transparent transactions for a wide range of use cases, including online shopping, property rentals, and hotel booking system.
+title: Getting Started with Crypto Pay & Escrow SDK
+pageTitle: Crypto Pay & Escrow SDK | Palindrome Finance
+description: Add crypto payments + escrow to Shopify, real estate, or booking apps in minutes. Accept USDT coin – open source, secure, no middlemen.
 ---
 
-Palindrome Finance is a crypto payment system with escrow service focused on secure cryptocurrency transactions, providing solutions that enhance trust and protection in digital payments. Palindrome Finance offers an SDK primarily designed for developers who want more control and customization. Additionally, we provide easy-to-integrate widgets that connect to Palindrome's Checkout System, enabling simple setup and effortless handling for customers.
+Palindrome Finance delivers a **crypto payment SDK with built-in escrow** — 
+built for developers who demand full control. Add 1-click checkout widgets
+to any site in minutes. Accept **USDT coin** with trustless security, no middlemen, and open-source code.
 
 You have two integration options:
 
@@ -55,9 +57,9 @@ REACT_APP_USDT_TOKEN=0x337610d27c682E347C9cD60BD4b3b107C9d34dDd //this is USDT F
 
 With the widget, you can add ready‑made Crypto Pay with buttons to your shop or booking system without building a custom checkout flow from scratch. As a merchant, you only place the button where your customer confirms the basket (products, services, or booking details) and pass a few required fields such as title, amount and your address (you will receive the funds).​
 
-When the button is clicked, your customer is redirected to the decentralized Checkout System, where they connect a wallet, review the order and complete a secure crypto payment. You can access the checkout at: [Palindrome Crypto Pay Checkout System](https://palindromefinance.com/checkout)
+When the button is clicked, your customer is redirected to the decentralized Checkout System, where they connect a wallet, review the order and complete a secure crypto payment. You can access the checkout at: [Palindrome Pay](https://palindromefinance.com/checkout)
 
-Either with the SDK or the Widget, you and your customers can view and manage every payment transactions through the [Palindrome Crypto Escrow Dashboard](https://palindromefinance.com/crypto-escrow). 
+Either with the SDK or the Widget, you and your customers can view and manage every payment transactions through the [Palindrome Crypto Escrow](https://palindromefinance.com/crypto-escrow). 
 
 The flow is simple: the customer places an order and pays, the merchant delivers the goods or services, and the customer confirms that everything is satisfactory. Once confirmed, the merchant can withdraw the funds.
 
@@ -94,7 +96,7 @@ Add this code to your product page, checkout page or booking confirmation:
   </button>
 </div>
 
-<script src="https://palindromefinance.com/widget.js" data-palindrome-endpoint="https://palindromefinance.com/checkout" defer></script>
+<script src="https://palindromefinance.com/widget.js" data-palindrome-endpoint="https://palindromefinance.com/crypto-pay" defer></script>
 ```
 
 ### Integration code Button Widget (Shopify)
@@ -136,7 +138,7 @@ Place this in product.liquid or a product section:
 
 <script 
   src="https://palindromefinance.com/widget.js" 
-  data-palindrome-endpoint="https://palindromefinance.com/checkout" 
+  data-palindrome-endpoint="https://palindromefinance.com/crypto-pay" 
   defer
 ></script>
 

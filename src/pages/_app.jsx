@@ -66,6 +66,23 @@ export default function App({ Component, pageProps }) {
       <Head>
         <title>{pageTitle}</title>
         {description && <meta name="description" content={description} />}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Getting Started with Crypto Pay & Escrow SDK",
+            "description": "Add crypto payments and escrow to any app in minutes.",
+            "url": "https://sdk.palindromefinance.com/",
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.palindromefinance.com" },
+                { "@type": "ListItem", "position": 2, "name": "Docs", "item": "https://sdk.palindromefinance.com" },
+                { "@type": "ListItem", "position": 3, "name": "Getting Started" }
+              ]
+            }
+          })}
+        </script>
       </Head>
       <Layout title={title} tableOfContents={tableOfContents}>
         <Component {...pageProps} />

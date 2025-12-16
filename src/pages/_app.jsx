@@ -51,57 +51,12 @@ function collectHeadings(nodes, slugify = slugifyWithCounter()) {
 export default function App({ Component, pageProps }) {
   let title = pageProps.markdoc?.frontmatter.title
 
-  let pageTitle =
-    pageProps.markdoc?.frontmatter.pageTitle ||
-    `${pageProps.markdoc?.frontmatter.title} - Docs`
-
-  let description = pageProps.markdoc?.frontmatter.description
-
   let tableOfContents = pageProps.markdoc?.content
     ? collectHeadings(pageProps.markdoc.content)
     : []
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        {description && <meta name="description" content={description} />}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              name: pageTitle,  // Better: use the dynamic page title
-              description: description || "Crypto Pay Gateway & Checkout System for your Business.", // fallback if needed
-              url: typeof window !== 'undefined' ? window.location.href : "https://sdk.palindromefinance.com/", // or use a prop for canonical URL
-              breadcrumb: {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  {
-                    "@type": "ListItem",
-                    position: 1,
-                    name: "Home",
-                    item: "https://www.palindromefinance.com"
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: "Docs",
-                    item: "https://sdk.palindromefinance.com"
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 3,
-                    name: title || "Getting Started", // use dynamic title
-                    item: typeof window !== 'undefined' ? window.location.href : "https://sdk.palindromefinance.com/" // current page URL
-                  }
-                ]
-              }
-            })
-          }}
-        />
-      </Head>
       <Layout title={title} tableOfContents={tableOfContents}>
         <Component {...pageProps} />
       </Layout>

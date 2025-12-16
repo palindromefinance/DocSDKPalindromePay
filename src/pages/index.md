@@ -26,7 +26,7 @@ This enables businesses to benefit from secure, transparent transactions for a w
 
 {% quick-link title="Quick Start" icon="installation" href="#quick-start" description="Step-by-step guides to setting up your system and installing the library." /%}
 
-{% quick-link title="Widget" icon="plugins" href="#widget" description="Integrate the checkout widget into your website without programming it from scratch." /%} 
+{% quick-link title="Palindrome Crypto Pay Widget" icon="plugins" href="#palindrome-crypto-pay-widget" description="Integrate the checkout widget into your website without programming it from scratch." /%} 
 
 {% /quick-links %}
 
@@ -53,7 +53,7 @@ REACT_APP_USDT_TOKEN=0x337610d27c682E347C9cD60BD4b3b107C9d34dDd //this is USDT F
 {% /callout %}
 
 
-## Widget
+## Palindrome Crypto Pay Widget
 
 With the widget, you can add ready‑made Crypto Pay with buttons to your shop or booking system without building a custom checkout flow from scratch. As a merchant, you only place the button where your customer confirms the basket (products, services, or booking details) and pass a few required fields such as title, amount and your address (you will receive the funds).​
 

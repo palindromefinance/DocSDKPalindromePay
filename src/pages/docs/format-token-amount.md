@@ -60,6 +60,6 @@ try {
 
 **No more guessing decimals — clean, readable token amounts every time!**
 
-**See also** → [`getUSDTBalanceOf()`](/docs/get-usdt-balance-of) · [`getEscrowUSDTBalanceFormatted()`](/docs/get-escrow-usdt-balance-formatted)
+**See also** → [`getUSDTBalanceOf()`](/docs/get-token-balance-of) · [`getEscrowUSDTBalanceFormatted()`](/docs/get-escrow-token-balance-formatted)
 
 

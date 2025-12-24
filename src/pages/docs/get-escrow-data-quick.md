@@ -95,11 +95,4 @@ try {
 }
 ```
 
-#### Why Use This?
-
-✅ **Instant data** – no waiting for subgraph indexing  
-✅ **Fresh from contract** – always current state  
-✅ **Strongly typed** – full TypeScript support  
-✅ **Includes decimals** – ready for `formatTokenAmount()`
-
 **See also** → [`getEscrowByIdParsed()`](/docs/get-escrow-by-id-parsed) · [`getEscrowDetail()`](/docs/get-escrow-detail)

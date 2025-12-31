@@ -11,6 +11,29 @@ const styles = {
 export function Button({ variant = 'primary', className, href, ...props }) {
   className = clsx(styles[variant], className)
 
+  // Handle anchor links with smooth scroll
+  if (href?.startsWith('#')) {
+    const handleClick = (e) => {
+      e.preventDefault()
+      const targetId = href.slice(1)
+      const element = document.getElementById(targetId)
+      if (element) {
+        const headerOffset = 100 // Account for sticky header
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        })
+      }
+    }
+
+    return (
+      <a href={href} className={className} onClick={handleClick} {...props} />
+    )
+  }
+
   return href ? (
     <Link href={href} className={className} {...props} />
   ) : (

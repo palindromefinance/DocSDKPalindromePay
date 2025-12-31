@@ -7,7 +7,7 @@ description: Create a new escrow deal on-chain (called by the seller)
 async createEscrow(
   walletClient: WalletClient,
   params: CreateEscrowParams
-): Promise<{ escrowId: bigint; txHash: string; maturityTime: bigint }>
+): Promise<{ escrowId: bigint; txHash: Hex; walletAddress: Address }>
 ```
 
 Creates a **new escrow** on the Palindrome contract. Must be called by the **seller** (or anyone paying gas). The buyer does **not** need to sign or pay anything at this stage.
@@ -29,7 +29,7 @@ interface CreateEscrowParams {
 #### Returns
 - `escrowId` – The new escrow ID
 - `txHash` – Transaction hash
-- `maturityTime` – Unix timestamp when funds auto-release (if set)
+- `walletAddress` – The escrow's dedicated multisig wallet address
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';
@@ -51,7 +51,7 @@ try {
   console.log("Escrow created successfully!");
   console.log("Escrow ID:", result.escrowId.toString());
   console.log("Tx:", result.txHash);
-  console.log("Auto-release on:", new Date(Number(result.maturityTime) * 1000));
+  console.log("Wallet:", result.walletAddress);
 
 } catch (error: any) {
   console.error("Failed to create escrow:", error.shortMessage || error.message);

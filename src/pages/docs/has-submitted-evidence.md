@@ -1,54 +1,48 @@
 ---
 title: hasSubmittedEvidence
-description: Check if a participant has already submitted evidence in a dispute
+description: Check if a user has already submitted dispute evidence
 ---
 
 ```ts
-async hasSubmittedEvidence(escrowId: bigint, role: Role): Promise<boolean>
+async hasSubmittedEvidence(
+  escrowId: bigint,
+  userAddress: Address
+): Promise<boolean>
 ```
 
-Utility function to check whether **buyer**, **seller**, or **arbiter** has already uploaded their evidence during a dispute.
-
-Useful for disabling the “Submit Evidence” button after submission.
+Checks whether a specific user has already submitted evidence for a dispute. Each participant can only submit once.
 
 #### Parameters
-- `escrowId: bigint` – The disputed escrow ID
-- `role: Role` – One of: `Role.Buyer`, `Role.Seller`, or `Role.Arbiter`
+- `escrowId: bigint` – The escrow ID
+- `userAddress: Address` – The wallet address to check
 
 #### Returns
-`Promise<boolean>` – `true` if evidence was already submitted, `false` otherwise
+`Promise<boolean>` – True if evidence has been submitted
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';
-import { Role } from '@palindromecryptoescrow/sdk';
 
-const { sdk } = await connectAndInitSDK();
+const { sdk, walletClient } = await connectAndInitSDK();
 
-try {
-  const buyerSubmitted = await sdk.hasSubmittedEvidence(42n, Role.Buyer);
-  const sellerSubmitted = await sdk.hasSubmittedEvidence(42n, Role.Seller);
-  const arbiterSubmitted = await sdk.hasSubmittedEvidence(42n, Role.Arbiter);
+const hasSubmitted = await sdk.hasSubmittedEvidence(
+  42n,
+  walletClient.account.address
+);
 
-  console.log("Evidence status:", {
-    buyer: buyerSubmitted ? "Submitted" : "Pending",
-    seller: sellerSubmitted ? "Submitted" : "Pending",
-    arbiter: arbiterSubmitted ? "Submitted" : "Pending",
-  });
-
-  // Example: conditionally show button
-  if (!buyerSubmitted) {
-    // Show "Submit Evidence" button for buyer
-  }
-
-} catch (error) {
-  console.error("Failed to check evidence status:", error);
+if (hasSubmitted) {
+  console.log("You have already submitted evidence");
+  // Disable submit button, show submitted status
+} else {
+  console.log("You can submit evidence");
+  // Show evidence submission form
 }
 ```
 
-#### Common Use Cases
-- Hide/disable submit button after user uploads
-- Show checkmark or “Submitted” label
-- Display progress indicators in dispute UI
-- Prevent double submissions
+#### Use Cases
+- Control UI state for evidence submission
+- Prevent duplicate submission attempts
+- Display submission status in dispute timeline
 
-**See also** → [`getDisputeSubmissionStatus()`](/docs/get-dispute-submission-status) for all-in-one status
+#### Related Methods
+- [`submitDisputeMessage()`](/docs/submit-dispute-message) – Submit dispute evidence
+- [`getDisputeSubmissionStatus()`](/docs/get-dispute-submission-status) – Get all parties' submission status

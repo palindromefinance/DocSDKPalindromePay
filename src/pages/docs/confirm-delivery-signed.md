@@ -1,51 +1,141 @@
 ---
 title: confirmDeliverySigned
-description: Delivery confirmation — buyer signs off-chain, anyone can submit
+description: Submit a gasless confirm delivery using pre-signed signatures
 ---
 
 ```ts
-async confirmDeliverySigned(walletClient: WalletClient, escrowId: bigint): Promise<string>
+async confirmDeliverySigned(
+  walletClient: WalletClient,
+  escrowId: bigint,
+  coordSignature: Hex,
+  deadline: bigint,
+  nonce: bigint,
+  buyerWalletSig: Hex
+): Promise<Hex>
 ```
 
-`confirmDelivery()` — the buyer signs a message off-chain (no gas), and **anyone** (you, a relayer, or the seller) can submit the signature on-chain to release funds.
+Submits a confirm delivery transaction using pre-signed EIP-712 signatures. The buyer signs off-chain (no gas), and **anyone** (relayer, seller, or the buyer themselves) can submit the signature on-chain.
 
 Perfect for mobile users, dApp UX, or reducing buyer friction.
 
-#### How It Works
-1. Buyer signs a message with a 60-minute deadline
-2. Signature + deadline + nonce sent to contract
-3. Contract verifies signature and releases funds exactly like normal `confirmDelivery`
-
 #### Parameters
-- `walletClient: WalletClient` – Buyer’s wallet (only used for signing)
-- `escrowId: bigint`
+- `walletClient: WalletClient` – Wallet submitting the transaction (pays gas)
+- `escrowId: bigint` – The escrow ID
+- `coordSignature: Hex` – Buyer's EIP-712 confirmation signature
+- `deadline: bigint` – Signature expiration timestamp
+- `nonce: bigint` – Buyer's nonce for replay protection
+- `buyerWalletSig: Hex` – Buyer's wallet authorization signature
 
 #### Returns
-`Promise<string>` – Transaction hash (from whoever submits)
+`Promise<Hex>` – Transaction hash
+
+#### Full Flow
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';
 
 const { sdk, walletClient } = await connectAndInitSDK(); // walletClient = buyer
 
-try {
-  // Buyer signs (no gas!)
-  const txHash = await sdk.confirmDeliverySigned(walletClient, 42n);
+const escrowId = 42n;
 
-  console.log("Signed & submitted successfully!");
-  console.log("Delivery confirmed — funds released to seller");
+try {
+  // Step 1: Prepare all signatures (buyer signs, no gas)
+  const prepared = await sdk.prepareConfirmDeliverySigned(walletClient, escrowId);
+
+  console.log("Signatures prepared:");
+  console.log("Deadline:", new Date(Number(prepared.deadline) * 1000));
+
+  // Step 2: Submit on-chain (can be same wallet or relayer)
+  const txHash = await sdk.confirmDeliverySigned(
+    walletClient,           // or relayerWallet
+    escrowId,
+    prepared.coordSignature,
+    prepared.deadline,
+    prepared.nonce,
+    prepared.buyerWalletSig
+  );
+
+  console.log("Delivery confirmed!");
+  console.log("Funds released to seller");
   console.log("Tx:", txHash);
 
-  // Works exactly like regular confirmDelivery
   // State → COMPLETE
 
 } catch (error: any) {
-  if (error.code === "NOT_BUYER") {
-    alert("Only the buyer can sign this");
-  } else if (error.code === "SIGNATURE_EXPIRED") {
-    alert("Signature deadline passed — please try again");
+  if (error.code === "SIGNATURE_EXPIRED") {
+    alert("Signature deadline passed — please sign again");
+  } else if (error.code === "NOT_BUYER") {
+    alert("Only the buyer can sign the confirmation");
   } else {
     console.error("Confirm failed:", error.shortMessage || error.message);
   }
 }
 ```
+
+#### Manual Signing (Advanced)
+
+If you need more control over the signing process:
+
+```ts
+const escrowId = 42n;
+const escrow = await sdk.getEscrowByIdParsed(escrowId);
+
+// Get nonce and deadline
+const nonce = await sdk.getUserNonce(escrowId, buyerAddress);
+const deadline = await sdk.createSignatureDeadline(60); // 60 minutes
+
+// Sign the confirmation message
+const coordSignature = await sdk.signConfirmDelivery(
+  walletClient,
+  escrowId,
+  deadline,
+  nonce
+);
+
+// Sign wallet authorization
+const buyerWalletSig = await sdk.signWalletAuthorization(
+  walletClient,
+  escrow.wallet,
+  escrowId
+);
+
+// Submit (can be done later by relayer)
+const txHash = await sdk.confirmDeliverySigned(
+  relayerWallet,
+  escrowId,
+  coordSignature,
+  deadline,
+  nonce,
+  buyerWalletSig
+);
+```
+
+#### Relayer Pattern
+
+```ts
+// Frontend: Buyer prepares signatures
+const prepared = await sdk.prepareConfirmDeliverySigned(walletClient, escrowId);
+
+// Send to backend
+await fetch('/api/relay-confirm', {
+  method: 'POST',
+  body: JSON.stringify({
+    escrowId: escrowId.toString(),
+    ...prepared,
+    deadline: prepared.deadline.toString(),
+    nonce: prepared.nonce.toString(),
+  }),
+});
+
+// Backend: Relayer submits
+const txHash = await sdk.confirmDeliverySigned(
+  relayerWallet,
+  BigInt(escrowId),
+  coordSignature,
+  BigInt(deadline),
+  BigInt(nonce),
+  buyerWalletSig
+);
+```
+
+**See also** → [`prepareConfirmDeliverySigned()`](/docs/prepare-confirm-delivery-signed) · [`signConfirmDelivery()`](/docs/sign-confirm-delivery) · [`confirmDelivery()`](/docs/confirm-delivery)

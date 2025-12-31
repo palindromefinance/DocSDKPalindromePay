@@ -1,10 +1,10 @@
 ---
-title: getTokenBalanceOf
+title: getTokenBalance
 description: Get the ERC20 token balance of any address
 ---
 
 ```ts
-async getTokenBalanceOf(
+async getTokenBalance(
   account: Address,
   tokenAddress: Address
 ): Promise<bigint>
@@ -29,7 +29,7 @@ const USDT_ADDRESS = "0x55d398326f99059fF775485246999027B3197955"; // BSC USDT
 
 try {
   // Check buyer's USDT balance
-  const buyerBalance = await sdk.getTokenBalanceOf(
+  const buyerBalance = await sdk.getTokenBalance(
     "0xbuyer123...",
     USDT_ADDRESS
   );
@@ -40,7 +40,7 @@ try {
   console.log("Buyer USDT:", formatted);
 
   // Check how much is currently in the escrow contract
-  const escrowBalance = await sdk.getTokenBalanceOf(
+  const escrowBalance = await sdk.getTokenBalance(
     "0xYourEscrowContractAddress...",
     USDT_ADDRESS
   );
@@ -48,7 +48,7 @@ try {
 
   // Works with any ERC20 token
   const USDC_ADDRESS = "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d";
-  const usdcBalance = await sdk.getTokenBalanceOf(
+  const usdcBalance = await sdk.getTokenBalance(
     "0xbuyer123...",
     USDC_ADDRESS
   );
@@ -93,7 +93,7 @@ The method throws `SDKError` with code `INVALIDTOKEN` if:
 
 ```ts
 try {
-  const balance = await sdk.getTokenBalanceOf(account, token);
+  const balance = await sdk.getTokenBalance(account, token);
 } catch (error: any) {
   if (error.code === "INVALIDTOKEN") {
     console.error("Invalid token contract");

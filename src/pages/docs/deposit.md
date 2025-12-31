@@ -4,7 +4,7 @@ description: Buyer deposits funds into the escrow (automatically handles USDT ap
 ---
 
 ```ts
-async deposit(walletClient: WalletClient, escrowId: bigint): Promise<string>
+async deposit(walletClient: WalletClient, escrowId: bigint): Promise<Hex>
 ```
 
 **Called by the buyer** to lock the agreed amount of tokens into the escrow contract.
@@ -20,7 +20,7 @@ The SDK does everything for you:
 - `escrowId: bigint` – The escrow ID
 
 #### Returns
-`Promise<string>` – Transaction hash
+`Promise<Hex>` – Transaction hash
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';

@@ -4,7 +4,7 @@ description: Finalize mutual cancellation after both parties requested and timeo
 ---
 
 ```ts
-async cancelByTimeout(walletClient: WalletClient, escrowId: bigint): Promise<string>
+async cancelByTimeout(walletClient: WalletClient, escrowId: bigint): Promise<Hex>
 ```
 
 **Anyone** can call this function once:
@@ -21,7 +21,7 @@ This immediately:
 - `escrowId: bigint`
 
 #### Returns
-`Promise<string>` – Transaction hash
+`Promise<Hex>` – Transaction hash
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';

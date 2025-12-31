@@ -26,7 +26,7 @@ const navigation = [
     ],
   },
   {
-    title: 'Core Functions',
+    title: 'Escrow Queries',
     links: [
       { title: 'getEscrows', href: '/docs/get-escrows' },
       { title: 'getEscrowById', href: '/docs/get-escrow-by-id' },
@@ -34,16 +34,21 @@ const navigation = [
       { title: 'getEscrowsByBuyer', href: '/docs/get-escrows-by-buyer' },
       { title: 'getEscrowsBySeller', href: '/docs/get-escrows-by-seller' },
       { title: 'getEscrowDetail', href: '/docs/get-escrow-detail' },
-      { title: 'getEscrowDataQuick', href: '/docs/get-escrow-data-quick' },
+      { title: 'getUserEscrows', href: '/docs/get-user-escrows' },
+      { title: 'getNextEscrowId', href: '/docs/get-next-escrow-id' },
     ],
   },
   {
     title: 'Escrow Lifecycle',
     links: [
       { title: 'createEscrow', href: '/docs/create-escrow' },
+      { title: 'createEscrowAndDeposit', href: '/docs/create-escrow-and-deposit' },
       { title: 'deposit', href: '/docs/deposit' },
+      { title: 'acceptEscrow', href: '/docs/accept-escrow' },
       { title: 'confirmDelivery', href: '/docs/confirm-delivery' },
       { title: 'confirmDeliverySigned', href: '/docs/confirm-delivery-signed' },
+      { title: 'prepareConfirmDeliverySigned', href: '/docs/prepare-confirm-delivery-signed' },
+      { title: 'autoRelease', href: '/docs/auto-release' },
     ],
   },
   {
@@ -51,6 +56,7 @@ const navigation = [
     links: [
       { title: 'requestCancel', href: '/docs/request-cancel' },
       { title: 'cancelByTimeout', href: '/docs/cancel-by-timeout' },
+      { title: 'getCancelRequestStatus', href: '/docs/get-cancel-request-status' },
     ],
   },
   {
@@ -62,16 +68,84 @@ const navigation = [
       { title: 'submitArbiterDecision', href: '/docs/submit-arbiter-decision' },
       { title: 'hasSubmittedEvidence', href: '/docs/has-submitted-evidence' },
       { title: 'getDisputeSubmissionStatus', href: '/docs/get-dispute-submission-status' },
+      { title: 'getDisputeMessages', href: '/docs/get-dispute-messages' },
     ],
   },
   {
-    title: 'Utilities & Helpers',
+    title: 'Wallet & Withdrawal',
     links: [
-      { title: 'getTokenBalanceOf', href: '/docs/get-token-balance-of' },
+      { title: 'withdraw', href: '/docs/withdraw' },
+      { title: 'getWalletBalance', href: '/docs/get-wallet-balance' },
+      { title: 'getWalletSignatureCount', href: '/docs/get-wallet-signature-count' },
+      { title: 'predictWalletAddress', href: '/docs/predict-wallet-address' },
+    ],
+  },
+  {
+    title: 'Signatures (EIP-712)',
+    links: [
+      { title: 'signWalletAuthorization', href: '/docs/sign-wallet-authorization' },
+      { title: 'signConfirmDelivery', href: '/docs/sign-confirm-delivery' },
+      { title: 'signStartDispute', href: '/docs/sign-start-dispute' },
+      { title: 'createSignatureDeadline', href: '/docs/create-signature-deadline' },
+      { title: 'isSignatureDeadlineExpired', href: '/docs/is-signature-deadline-expired' },
+    ],
+  },
+  {
+    title: 'Nonce Management',
+    links: [
+      { title: 'getUserNonce', href: '/docs/get-user-nonce' },
+      { title: 'getNonceBitmap', href: '/docs/get-nonce-bitmap' },
+      { title: 'isNonceUsed', href: '/docs/is-nonce-used' },
+      { title: 'getMultipleNonces', href: '/docs/get-multiple-nonces' },
+    ],
+  },
+  {
+    title: 'Token Utilities',
+    links: [
+      { title: 'getTokenBalance', href: '/docs/get-token-balance' },
+      { title: 'getTokenDecimals', href: '/docs/get-token-decimals' },
+      { title: 'getTokenAllowance', href: '/docs/get-token-allowance' },
+      { title: 'approveTokenIfNeeded', href: '/docs/approve-token-if-needed' },
       { title: 'formatTokenAmount', href: '/docs/format-token-amount' },
+      { title: 'getUserBalances', href: '/docs/get-user-balances' },
+    ],
+  },
+  {
+    title: 'Fees & Status',
+    links: [
+      { title: 'getFeeBps', href: '/docs/get-fee-bps' },
+      { title: 'getFeeReceiver', href: '/docs/get-fee-receiver' },
+      { title: 'calculateFee', href: '/docs/calculate-fee' },
+      { title: 'getStatusLabel', href: '/docs/get-status-label' },
+      { title: 'getUserRole', href: '/docs/get-user-role' },
       { title: 'getMaturityInfo', href: '/docs/get-maturity-info' },
-      { title: 'getEscrowStatusLabel', href: '/docs/get-escrow-status-label' },
-      { title: 'clearAllEscrowCache', href: '/docs/clear-all-escrow-cache' },
+    ],
+  },
+  {
+    title: 'Simulation & Gas',
+    links: [
+      { title: 'simulateTransaction', href: '/docs/simulate-transaction' },
+      { title: 'simulateDeposit', href: '/docs/simulate-deposit' },
+      { title: 'simulateConfirmDelivery', href: '/docs/simulate-confirm-delivery' },
+      { title: 'simulateWithdraw', href: '/docs/simulate-withdraw' },
+      { title: 'estimateGasWithBuffer', href: '/docs/estimate-gas-with-buffer' },
+    ],
+  },
+  {
+    title: 'Cache & Health',
+    links: [
+      { title: 'healthCheck', href: '/docs/health-check' },
+      { title: 'getEscrowStatus', href: '/docs/get-escrow-status' },
+      { title: 'getCacheStats', href: '/docs/get-cache-stats' },
+      { title: 'clearAllCaches', href: '/docs/clear-all-caches' },
+      { title: 'clearEscrowCache', href: '/docs/clear-escrow-cache' },
+    ],
+  },
+  {
+    title: 'Real-time Events',
+    links: [
+      { title: 'watchUserEscrows', href: '/docs/watch-user-escrows' },
+      { title: 'watchEscrowStateChanges', href: '/docs/watch-escrow-state-changes' },
     ],
   },
   {
@@ -80,12 +154,6 @@ const navigation = [
       { title: 'Enums & Types', href: '/docs/enums' },
     ],
   },
-  {
-    title: 'Real-time Events',
-    links: [
-      { title: 'watchUserEscrows', href: '/docs/watch-user-escrows' },
-    ],
-  }
 ]
 
 function GitHubIcon(props) {

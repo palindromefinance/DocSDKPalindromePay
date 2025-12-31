@@ -9,7 +9,7 @@ async submitArbiterDecision(
   escrowId: bigint,
   resolution: DisputeResolution,
   ipfsHash: string
-): Promise<string>
+): Promise<Hex>
 ```
 
 **Only the designated arbiter** (or platform admin) can call this function.
@@ -23,7 +23,7 @@ This is the **final step** in a dispute — it permanently resolves the escrow a
 - `ipfsHash: string` – IPFS CID of the final ruling + explanation
 
 #### Returns
-`Promise<string>` – Transaction hash
+`Promise<Hex>` – Transaction hash
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';

@@ -9,7 +9,7 @@ async submitDisputeMessage(
   escrowId: bigint,
   role: Role,
   ipfsHash: string
-): Promise<string>
+): Promise<Hex>
 ```
 
 Allows **buyer**, **seller**, or **arbiter** to upload evidence (chat logs, screenshots, tracking numbers, videos, etc.) to IPFS and attach it to the ongoing dispute.
@@ -23,7 +23,7 @@ Each participant can submit **only once**.
 - `ipfsHash: string` – IPFS CID of your evidence (e.g. `"QmXyZ123..."`)
 
 #### Returns
-`Promise<string>` – Transaction hash
+`Promise<Hex>` – Transaction hash
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';

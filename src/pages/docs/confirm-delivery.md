@@ -4,7 +4,7 @@ description: Buyer confirms successful delivery — releases funds to the seller
 ---
 
 ```ts
-async confirmDelivery(walletClient: WalletClient, escrowId: bigint): Promise<string>
+async confirmDelivery(walletClient: WalletClient, escrowId: bigint): Promise<Hex>
 ```
 
 **Called by the buyer** after receiving the product/service in good condition.
@@ -16,7 +16,7 @@ This instantly releases the escrowed funds (minus fee) to the seller and marks t
 - `escrowId: bigint` – The escrow ID
 
 #### Returns
-`Promise<string>` – Transaction hash
+`Promise<Hex>` – Transaction hash
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';

@@ -4,7 +4,7 @@ description: Buyer or seller requests to cancel the escrow (mutual cancellation 
 ---
 
 ```ts
-async requestCancel(walletClient: WalletClient, escrowId: bigint): Promise<string>
+async requestCancel(walletClient: WalletClient, escrowId: bigint): Promise<Hex>
 ```
 
 **Called by buyer or seller** to signal they want to cancel the deal.
@@ -19,7 +19,7 @@ This is the first step in **mutual cancellation**.
 - `escrowId: bigint`
 
 #### Returns
-`Promise<string>` – Transaction hash
+`Promise<Hex>` – Transaction hash
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';

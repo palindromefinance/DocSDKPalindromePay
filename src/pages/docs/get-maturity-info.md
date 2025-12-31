@@ -1,72 +1,60 @@
 ---
 title: getMaturityInfo
-description: Get complete maturity deadline info — days, date, time remaining, and status
+description: Get maturity timing information for an escrow
 ---
 
 ```ts
-getMaturityInfo(
-  depositTime: bigint | number | string | null,
-  maturityTimeDays: bigint | number | string
-): MaturityInfo
+async getMaturityInfo(escrowId: bigint): Promise<MaturityInfo>
 ```
 
-Converts raw deposit time + maturity days into a **rich, human-friendly object** with everything you need for countdowns, badges, and auto-release logic.
-
-Perfect for showing "Auto-release in X days" or "Deadline passed".
+Returns timing information about the escrow's maturity period, including when auto-release becomes available.
 
 #### Parameters
-- `depositTime` – Unix timestamp (seconds) when funds were deposited
-- `maturityTimeDays` – Number of days until auto-release (0 = no auto-release)
+- `escrowId: bigint` – The escrow ID
 
 #### Returns
-`MaturityInfo` object
-
-```ts
-interface MaturityInfo {
-  maturityDays: number;
-  deadline: Date | null;           // Exact auto-release date/time
-  hasDeadline: boolean;            // true if maturity > 0
-  isPassed: boolean;               // true if current time > deadline
-  timeRemaining: string;           // e.g. "3d 12h remaining" or "Deadline passed"
-}
-```
+`Promise<MaturityInfo>` – Maturity timing information
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';
 
 const { sdk } = await connectAndInitSDK();
 
-// Example: escrow created with 7-day maturity
-const depositTime = 1723112400n;     // Aug 8, 2024
-const maturityDays = 7n;
+const info = await sdk.getMaturityInfo(42n);
 
-const info = sdk.getMaturityInfo(depositTime, maturityDays);
+console.log(`Maturity time: ${new Date(info.maturityTime)}`);
+console.log(`Is mature: ${info.isMature}`);
+console.log(`Time until mature: ${info.timeUntilMature}ms`);
 
-console.log("Maturity info:", {
-  days: info.maturityDays,           // 7
-  deadline: info.deadline?.toLocaleString(),
-  hasDeadline: info.hasDeadline,     // true
-  expired: info.isPassed,            // false (if still within 7 days)
-  countdown: info.timeRemaining,     // "4d 8h remaining" or "Deadline passed"
-});
+if (info.isMature) {
+  console.log("Escrow is mature - auto-release available");
+  // Show auto-release button
+} else {
+  const hoursLeft = Math.ceil(info.timeUntilMature / 3600000);
+  console.log(`${hoursLeft} hours until maturity`);
+}
 ```
 
-#### Sample Outputs
+#### MaturityInfo Structure
+```ts
+interface MaturityInfo {
+  maturityTime: number;     // Unix timestamp (ms) when escrow matures
+  isMature: boolean;        // Whether maturity time has passed
+  timeUntilMature: number;  // Milliseconds until mature (0 if already mature)
+  gracePeriodEnd: number;   // When grace period ends (for auto-release)
+}
+```
 
-| Scenario                     | `timeRemaining`             | `isPassed` |
-|-----------------------------|------------------------------|------------|
-| 3 days left                 | `"3d 5h remaining"`          | `false`    |
-| 2 hours left                | `"2h 15m remaining"`         | `false`    |
-| 5 minutes left              | `"5m remaining"`             | `false`    |
-| Deadline passed             | `"Deadline passed"`          | `true`     |
-| No maturity (0 days)        | `"No deadline"`              | `false`    |
+#### What is Maturity?
+- Each escrow has a **maturity time** set at creation
+- After maturity + grace period, the seller can call `autoRelease()` if buyer hasn't confirmed
+- This protects sellers from unresponsive buyers
 
-#### Perfect For
-- Countdown timers
-- "Auto-release" badges
-- Disabling confirm buttons after deadline
-- Showing "Funds released automatically" messages
+#### Use Cases
+- Display countdown timers
+- Enable/disable auto-release button
+- Show escrow timeline
 
-**Never guess deadlines again — full clarity for users**
-
-**See also** → [`formatMaturityDays()`](/docs/format-maturity-days) · [`calculateDeadline()`](/docs/calculate-deadline)
+#### Related Methods
+- [`autoRelease()`](/docs/auto-release) – Release funds after grace period
+- [`confirmDelivery()`](/docs/confirm-delivery) – Buyer confirms before auto-release

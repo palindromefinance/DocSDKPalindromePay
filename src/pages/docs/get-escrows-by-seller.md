@@ -1,65 +1,52 @@
 ---
 title: getEscrowsBySeller
-description: Fetch all escrows where a specific address is the seller (via subgraph)
+description: Fetch all escrows where the specified address is the seller
 ---
 
 ```ts
 async getEscrowsBySeller(seller: string): Promise<Escrow[]>
 ```
 
-Returns every escrow (active, completed, disputed, etc.) where the given address is listed as the **seller**, using fully indexed data from The Graph — includes title, IPFS description, timestamps, token symbol, and more.
+Queries the subgraph to retrieve all escrows where the given address is the **seller**.
 
-**Parameters**  
-`seller: string` – Seller’s wallet address (case-insensitive)
+#### Parameters
+- `seller: string` – The seller's wallet address
 
-**Returns**  
-`Promise<Escrow[]>` – Array of complete escrow objects (same rich format as `getEscrows()`)
+#### Returns
+`Promise<Escrow[]>` – Array of escrow objects
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';
 
-const { sdk, address } = await connectAndInitSDK(); // address = your connected wallet
+const { sdk } = await connectAndInitSDK();
 
-try {
-  const mySellerEscrows = await sdk.getEscrowsBySeller(address);
+const escrows = await sdk.getEscrowsBySeller("0xSellerAddress...");
 
-  console.log(`You are the seller in ${mySellerEscrows.length} escrow(s):`);
+console.log(`Found ${escrows.length} escrows as seller`);
 
-  mySellerEscrows.forEach((escrow) => {
-    console.log({
-      id: escrow.id,
-      title: escrow.title || 'Untitled deal',
-      buyer: escrow.buyer.id,
-      amount: escrow.amount,
-      token: escrow.token.symbol,
-      state: escrow.state,
-      createdAt: new Date(Number(escrow.createdAt) * 1000).toLocaleDateString(),
-      maturity: escrow.maturityTime
-        ? new Date(Number(escrow.maturityTime) * 1000).toLocaleDateString()
-        : 'No maturity',
-    });
-  });
-} catch (error) {
-  console.error('Failed to load seller escrows:', error);
-}
+escrows.forEach(escrow => {
+  console.log(`Escrow #${escrow.id}: ${escrow.state}`);
+  console.log(`  Buyer: ${escrow.buyer}`);
+  console.log(`  Amount: ${escrow.amount}`);
+});
 ```
 
-**Sample Escrow Object (you as seller)**
-
+#### Escrow Object Structure
 ```ts
-{
-  id: "89",
-  title: "MacBook Pro M2 16GB - Like New",
-  ipfsHash: "QmXyz...",
-  amount: "1850000000",          // 1850 USDT
-  token: { id: "0x...", symbol: "USDT" },
-  buyer: { id: "0xbuyer456..." },
-  seller: { id: "0xyouraddress..." },
-  arbiter: { id: "0xarbiter..." },
-  state: "AWAITING_PAYMENT",     // buyer hasn't deposited yet
-  createdAt: "1723200000",
-  depositTime: "0",              // not deposited yet
-  maturityTime: "1723804800",    // +7 days from deposit
-  messages: []
+interface Escrow {
+  id: string;
+  buyer: string;
+  seller: string;
+  amount: string;
+  token: string;
+  state: string;
+  arbiter?: string;
+  createdAt: string;
+  // ... additional fields from subgraph
 }
 ```
+
+#### Use Cases
+- Display seller's sales history
+- Show pending payments awaiting delivery confirmation
+- Track all active orders for a seller dashboard

@@ -4,7 +4,7 @@ description: Open a dispute if the deal went wrong — moves escrow to DISPUTED 
 ---
 
 ```ts
-async startDispute(walletClient: WalletClient, escrowId: bigint): Promise<string>
+async startDispute(walletClient: WalletClient, escrowId: bigint): Promise<Hex>
 ```
 
 **Called by buyer or seller** when something goes wrong:
@@ -24,7 +24,7 @@ Calling this:
 - `escrowId: bigint`
 
 #### Returns
-`Promise<string>` – Transaction hash
+`Promise<Hex>` – Transaction hash
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';

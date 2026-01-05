@@ -54,7 +54,7 @@
   <!-- Terminal content -->
   <text x="840" y="250" font-family="ui-monospace, monospace" font-size="14" fill="#64748b">$</text>
   <text x="858" y="250" font-family="ui-monospace, monospace" font-size="14" fill="white"> npm install</text>
-  <text x="840" y="280" font-family="ui-monospace, monospace" font-size="13" fill="#0ea5e9">  @palindromecryptoescrow/sdk</text>
+  <text x="840" y="280" font-family="ui-monospace, monospace" font-size="14" fill="#0ea5e9">  @palindromepay/sdk</text>
   <text x="840" y="320" font-family="ui-monospace, monospace" font-size="14" fill="#22c55e">✓ installed successfully</text>
   <text x="840" y="360" font-family="ui-monospace, monospace" font-size="14" fill="#64748b">// Ready to build!</text>
 </svg>

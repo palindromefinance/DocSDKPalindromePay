@@ -22,7 +22,7 @@ function generateStructuredData(meta, canonicalUrl, isDocPage) {
     description: defaultMeta.description,
     publisher: {
       '@type': 'Organization',
-      name: 'Palindrome Finance',
+      name: 'Palindrome Pay',
       url: 'https://palindromefinance.com',
     },
   }
@@ -36,11 +36,11 @@ function generateStructuredData(meta, canonicalUrl, isDocPage) {
       url: canonicalUrl,
       author: {
         '@type': 'Organization',
-        name: 'Palindrome Finance',
+        name: 'Palindrome Pay',
       },
       publisher: {
         '@type': 'Organization',
-        name: 'Palindrome Finance',
+        name: 'Palindrome Pay',
         url: 'https://palindromefinance.com',
       },
       mainEntityOfPage: {
@@ -103,12 +103,12 @@ export function SEO({
       {meta.type === 'article' && date && (
         <>
           <meta property="article:published_time" content={date} />
-          <meta property="article:author" content="Palindrome Finance" />
+          <meta property="article:author" content="Palindrome Pay" />
         </>
       )}
 
       {/* Additional SEO tags */}
-      <meta name="author" content="Palindrome Finance" />
+      <meta name="author" content="Palindrome Pay" />
       <meta name="keywords" content="escrow, crypto escrow, blockchain, smart contract, SDK, Web3, Ethereum, EIP-712, gasless transactions, decentralized escrow, cryptocurrency payments" />
       <meta name="theme-color" content="#0ea5e9" />
 

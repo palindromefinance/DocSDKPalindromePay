@@ -18,7 +18,7 @@ Checks the escrow data to determine what role (if any) the specified address has
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';
-import { Role } from '@palindromecryptoescrow/sdk';
+import { Role } from '@palindromepay/sdk';
 
 const { sdk } = await connectAndInitSDK();
 

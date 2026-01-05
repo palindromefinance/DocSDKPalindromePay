@@ -17,7 +17,7 @@ Converts an escrow state enum value to a human-readable string label for display
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';
-import { EscrowState } from '@palindromecryptoescrow/sdk';
+import { EscrowState } from '@palindromepay/sdk';
 
 const { sdk } = await connectAndInitSDK();
 

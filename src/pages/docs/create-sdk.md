@@ -23,7 +23,7 @@ export const publicClient = createPublicClient({
 SDK Factory
 ```ts
 // lib/createSDK.ts
-import { PalindromeEscrowSDK } from '@palindromecryptoescrow/sdk';
+import { PalindromeEscrowSDK } from '@palindromepay/sdk';
 import { WalletClient } from 'viem';
 import { publicClient } from '@/config/viem';
 import { apolloClient } from '@/config/apollo';

@@ -21,7 +21,7 @@ Sets up a real-time subscription to watch for state changes on a specific escrow
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';
-import { EscrowState } from '@palindromecryptoescrow/sdk';
+import { EscrowState } from '@palindromepay/sdk';
 
 const { sdk } = await connectAndInitSDK();
 

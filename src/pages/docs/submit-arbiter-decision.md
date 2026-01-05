@@ -27,7 +27,7 @@ This is the **final step** in a dispute — it permanently resolves the escrow a
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';
-import { DisputeResolution } from '@palindromecryptoescrow/sdk';
+import { DisputeResolution } from '@palindromepay/sdk';
 
 const { sdk, walletClient: arbiterWallet } = await connectAndInitSDK();
 

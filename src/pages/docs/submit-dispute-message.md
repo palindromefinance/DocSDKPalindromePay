@@ -27,7 +27,7 @@ Each participant can submit **only once**.
 
 ```ts
 import { createPalindromeSDK } from '@/lib/createSDK';
-import { Role } from '@palindromecryptoescrow/sdk';
+import { Role } from '@palindromepay/sdk';
 
 const { sdk, walletClient } = await connectAndInitSDK(); // walletClient = buyer or seller
 

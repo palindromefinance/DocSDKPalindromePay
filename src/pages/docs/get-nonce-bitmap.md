@@ -1,6 +1,6 @@
 ---
 title: getNonceBitmap
-description: Get the raw nonce bitmap from the contract for advanced nonce management
+description: "Palindrome Crypto Pay: Get the raw nonce bitmap from the contract for advanced nonce management in signed transactions."
 ---
 
 ```ts

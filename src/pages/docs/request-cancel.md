@@ -1,6 +1,6 @@
 ---
 title: requestCancel
-description: Buyer or seller requests to cancel the escrow (mutual cancellation flow)
+description: "Palindrome Crypto Pay: Buyer or seller requests to cancel the escrow. Both parties must agree for mutual cancellation to complete."
 ---
 
 ```ts

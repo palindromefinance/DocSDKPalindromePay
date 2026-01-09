@@ -1,6 +1,6 @@
 ---
 title: isSignatureDeadlineExpired
-description: Check if a signature deadline has passed
+description: "Palindrome Crypto Pay: Check if a signature deadline has passed. Validate signatures before submitting gasless transactions."
 ---
 
 ```ts

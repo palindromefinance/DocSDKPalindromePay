@@ -1,11 +1,11 @@
-# Palindrome Crypto Escrow SDK Documentation
-# https://sdk.palindromefinance.com
+# Palindrome Crypto Pay SDK Documentation
+# https://sdk.palindromepay.com
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://sdk.palindromefinance.com/sitemap.xml
+Sitemap: https://sdk.palindromepay.com/sitemap.xml
 
 # Disallow admin or private routes (if any)
 Disallow: /api/

@@ -1,6 +1,6 @@
 ---
 title: createEscrow
-description: Create a new escrow deal on-chain (called by the seller)
+description: "Palindrome Crypto Pay: Create a new escrow deal on-chain as the seller. Set token, amount, buyer, arbiter, and maturity terms."
 ---
 
 ```ts

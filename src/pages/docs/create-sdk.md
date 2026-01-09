@@ -1,6 +1,6 @@
 ---
 title: Create Palindrome SDK
-description: Initialize Apollo Client, Public Client, and create the PalindromePaySDK instance
+description: "Palindrome Crypto Pay: Initialize Apollo Client, Public Client, and create the PalindromePaySDK instance for blockchain interactions."
 ---
 
 Before you can use any of the SDK functions, you need to properly initialize and configure the required clients.

@@ -1,6 +1,6 @@
 ---
 title: submitArbiterDecision
-description: Arbiter resolves the dispute — final ruling (seller wins or buyer refunded)
+description: "Palindrome Crypto Pay: Arbiter resolves the dispute with a final ruling. Funds go to seller (COMPLETE) or buyer (REFUNDED)."
 ---
 
 ```ts

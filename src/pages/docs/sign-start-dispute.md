@@ -1,6 +1,6 @@
 ---
 title: signStartDispute
-description: Sign EIP-712 message for gasless dispute initiation
+description: "Palindrome Crypto Pay: Sign EIP-712 typed data message for gasless dispute initiation. Enables meta-transactions for dispute flow."
 ---
 
 ```ts

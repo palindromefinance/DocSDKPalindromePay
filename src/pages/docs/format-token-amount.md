@@ -1,6 +1,6 @@
 ---
 title: formatTokenAmount
-description: Convert raw bigint token amount to human-readable string with decimals
+description: "Palindrome Crypto Pay: Convert raw bigint token amount to human-readable string with proper decimal formatting for display."
 ---
 
 ```ts

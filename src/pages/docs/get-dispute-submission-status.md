@@ -1,6 +1,6 @@
 ---
 title: getDisputeSubmissionStatus
-description: Get evidence submission status for buyer, seller, and arbiter in one call
+description: "Palindrome Crypto Pay: Get evidence submission status for buyer, seller, and arbiter in one call. Track dispute progress."
 ---
 
 ```ts

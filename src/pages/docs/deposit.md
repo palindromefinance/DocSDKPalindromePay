@@ -1,6 +1,6 @@
 ---
 title: deposit
-description: Buyer deposits funds into the escrow (automatically handles USDT approve + deposit)
+description: "Palindrome Crypto Pay: Buyer deposits funds into the escrow. Automatically handles USDT token approval and deposit in a secure blockchain transaction."
 ---
 
 ```ts

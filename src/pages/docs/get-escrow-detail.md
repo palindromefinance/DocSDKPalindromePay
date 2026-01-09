@@ -1,6 +1,6 @@
 ---
 title: getEscrowDetail
-description: Fetch detailed escrow data from the subgraph including all related information
+description: "Palindrome Crypto Pay: Fetch detailed escrow data from the subgraph including all related information, dispute history, and transaction events."
 ---
 
 ```ts

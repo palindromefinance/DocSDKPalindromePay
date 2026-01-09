@@ -1,6 +1,6 @@
 ---
 title: getNextEscrowId
-description: Get the next escrow ID that will be assigned
+description: "Palindrome Crypto Pay: Get the next escrow ID that will be assigned. Useful for predicting wallet addresses before creation."
 ---
 
 ```ts

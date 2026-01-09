@@ -1,6 +1,6 @@
 ---
 title: getEscrowById
-description: Read raw escrow data directly from the smart contract by ID
+description: "Palindrome Crypto Pay: Read raw escrow data directly from the smart contract by ID. Returns all escrow details including state and participants."
 ---
 
 ```ts

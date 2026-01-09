@@ -1,6 +1,6 @@
 ---
 title: getMultipleNonces
-description: Get multiple available nonces at once for batch operations
+description: "Palindrome Crypto Pay: Get multiple available nonces at once for batch operations. Optimized for high-throughput escrow workflows."
 ---
 
 ```ts

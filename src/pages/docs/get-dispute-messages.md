@@ -1,6 +1,6 @@
 ---
 title: getDisputeMessages
-description: Fetch all dispute messages/evidence for an escrow from the subgraph
+description: "Palindrome Crypto Pay: Fetch all dispute messages and evidence for an escrow from the subgraph. Review the full dispute history."
 ---
 
 ```ts

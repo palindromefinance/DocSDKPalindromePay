@@ -1,6 +1,6 @@
 ---
 title: hasSubmittedEvidence
-description: Check if a specific role has submitted evidence in a dispute
+description: "Palindrome Crypto Pay: Check if a specific role (buyer, seller, arbiter) has already submitted evidence in an active dispute."
 ---
 
 Check if a specific participant (buyer, seller, or arbiter) has submitted evidence for a disputed escrow.

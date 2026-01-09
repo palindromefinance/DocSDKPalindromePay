@@ -1,6 +1,6 @@
 ---
 title: getTokenAllowance
-description: Check how much token spending is approved for a spender
+description: "Palindrome Crypto Pay: Check how much token spending is approved for a spender address. Verify allowances before escrow operations."
 ---
 
 ```ts

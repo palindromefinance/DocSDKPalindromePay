@@ -1,6 +1,6 @@
 ---
 title: confirmDelivery
-description: Buyer confirms successful delivery — releases funds to the seller
+description: "Palindrome Crypto Pay: Buyer confirms successful delivery of goods or services. This releases the escrowed funds to the seller."
 ---
 
 ```ts

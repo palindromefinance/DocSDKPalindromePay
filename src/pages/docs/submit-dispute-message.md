@@ -1,6 +1,6 @@
 ---
 title: submitDisputeMessage
-description: Submit evidence or message during an active dispute
+description: "Palindrome Crypto Pay: Submit evidence or message during an active dispute. Both buyer and seller can provide proof for arbiter review."
 ---
 
 ```ts

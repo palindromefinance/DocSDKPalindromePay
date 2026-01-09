@@ -1,6 +1,6 @@
 ---
 title: autoRelease
-description: Automatically release funds to seller after maturity time has passed
+description: "Palindrome Crypto Pay: Automatically release funds to seller after maturity time has passed. Protects sellers from unresponsive buyers."
 ---
 
 ```ts

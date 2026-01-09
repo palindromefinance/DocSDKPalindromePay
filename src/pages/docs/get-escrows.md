@@ -1,6 +1,6 @@
 ---
 title: getEscrows
-description: Fetch all escrows from the subgraph
+description: "Palindrome Crypto Pay: Fetch all escrows from the subgraph. Query the complete list of escrow deals on the blockchain."
 ---
 
 ```ts

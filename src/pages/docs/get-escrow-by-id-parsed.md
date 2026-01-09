@@ -1,6 +1,6 @@
 ---
 title: getEscrowByIdParsed
-description: Get fully parsed and typed escrow data from the contract
+description: "Palindrome Crypto Pay: Get fully parsed and typed escrow data from the contract. Returns strongly-typed TypeScript objects."
 ---
 
 ```ts

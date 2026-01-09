@@ -1,6 +1,6 @@
 ---
 title: createEscrowAndDeposit
-description: Create a new escrow and deposit funds in one transaction (as buyer)
+description: "Palindrome Crypto Pay: Create a new escrow and deposit funds in one transaction as the buyer. Streamlined escrow creation."
 ---
 
 ```ts

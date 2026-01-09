@@ -1,6 +1,6 @@
 ---
 title: approveTokenIfNeeded
-description: Approve token spending only if current allowance is insufficient
+description: "Palindrome Crypto Pay: Approve token spending only if current allowance is insufficient. Smart approval handling for UX."
 ---
 
 ```ts

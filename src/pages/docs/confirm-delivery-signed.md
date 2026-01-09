@@ -1,6 +1,6 @@
 ---
 title: confirmDeliverySigned
-description: Submit a gasless confirm delivery using pre-signed signatures
+description: "Palindrome Crypto Pay: Submit a gasless confirm delivery using pre-signed EIP-712 signatures. Relayer pays the gas fees."
 ---
 
 ```ts

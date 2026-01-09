@@ -1,6 +1,6 @@
 ---
 title: signWalletAuthorization
-description: Sign EIP-712 wallet authorization for escrow multisig operations
+description: "Palindrome Crypto Pay: Sign EIP-712 wallet authorization for escrow multisig operations. Required for deposits and withdrawals."
 ---
 
 ```ts

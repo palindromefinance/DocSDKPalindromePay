@@ -1,6 +1,6 @@
 ---
 title: createSignatureDeadline
-description: Create a signature expiration deadline based on current block timestamp
+description: "Palindrome Crypto Pay: Create a signature expiration deadline based on current block timestamp for secure gasless transactions."
 ---
 
 ```ts

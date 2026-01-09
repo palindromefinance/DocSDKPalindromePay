@@ -1,6 +1,6 @@
 ---
 title: acceptEscrow
-description: Seller accepts a buyer-created escrow and provides wallet authorization signature
+description: "Palindrome Crypto Pay: Seller accepts a buyer-created escrow and provides wallet authorization signature for the 2-of-3 multisig."
 ---
 
 ```ts

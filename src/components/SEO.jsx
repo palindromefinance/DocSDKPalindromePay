@@ -2,14 +2,14 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 const defaultMeta = {
-  title: 'Palindrome Crypto Escrow SDK',
-  siteName: 'Palindrome Crypto Escrow SDK Documentation',
-  description: 'Official documentation for the Palindrome Crypto Escrow SDK. Build secure, decentralized escrow solutions with smart contract integration, EIP-712 signatures, and gasless transactions.',
-  url: 'https://sdk.palindromefinance.com',
-  image: 'https://sdk.palindromefinance.com/og-image.png',
+  title: 'Palindrome Crypto Pay SDK',
+  siteName: 'Palindrome Crypto Pay SDK Documentation',
+  description: 'Official documentation for the Palindrome Crypto Pay SDK. Build secure, decentralized escrow solutions with smart contract integration, EIP-712 signatures, and gasless transactions.',
+  url: 'https://sdk.palindromepay.com',
+  image: 'https://sdk.palindromepay.com/og-image.png',
   type: 'website',
   robots: 'index, follow',
-  twitterHandle: '@palindromefi',
+  twitterHandle: '@palindromepay',
 }
 
 // JSON-LD structured data for documentation
@@ -23,7 +23,7 @@ function generateStructuredData(meta, canonicalUrl, isDocPage) {
     publisher: {
       '@type': 'Organization',
       name: 'Palindrome Pay',
-      url: 'https://palindromefinance.com',
+      url: 'https://palindromepay.com',
     },
   }
 
@@ -41,7 +41,7 @@ function generateStructuredData(meta, canonicalUrl, isDocPage) {
       publisher: {
         '@type': 'Organization',
         name: 'Palindrome Pay',
-        url: 'https://palindromefinance.com',
+        url: 'https://palindromepay.com',
       },
       mainEntityOfPage: {
         '@type': 'WebPage',

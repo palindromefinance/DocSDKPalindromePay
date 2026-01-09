@@ -1,6 +1,6 @@
 ---
 title: getTokenBalance
-description: Get the ERC20 token balance of any address
+description: "Palindrome Crypto Pay: Get the ERC20 token balance of any address. Check USDT or other supported token balances before transactions."
 ---
 
 ```ts

@@ -1,6 +1,6 @@
 ---
 title: cancelByTimeout
-description: Finalize mutual cancellation after both parties requested and timeout passed
+description: "Palindrome Crypto Pay: Finalize cancellation after maturity time passed and buyer requested cancel. Returns funds to buyer."
 ---
 
 ```ts

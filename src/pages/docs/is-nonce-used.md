@@ -1,6 +1,6 @@
 ---
 title: isNonceUsed
-description: Check if a specific nonce has been used for an escrow signer
+description: "Palindrome Crypto Pay: Check if a specific nonce has been used for an escrow signer. Prevents replay attacks in signed transactions."
 ---
 
 ```ts

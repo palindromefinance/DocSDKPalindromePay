@@ -1,6 +1,6 @@
 ---
 title: getTokenDecimals
-description: Get the decimal places for any ERC20 token
+description: "Palindrome Crypto Pay: Get the decimal places for any ERC20 token. Essential for formatting token amounts correctly in your UI."
 ---
 
 ```ts

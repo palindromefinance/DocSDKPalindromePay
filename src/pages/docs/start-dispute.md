@@ -1,6 +1,6 @@
 ---
 title: startDispute
-description: Open a dispute if the deal went wrong — moves escrow to DISPUTED state
+description: "Palindrome Crypto Pay: Open a dispute if the deal went wrong. This moves the escrow to DISPUTED state for arbiter resolution."
 ---
 
 ```ts

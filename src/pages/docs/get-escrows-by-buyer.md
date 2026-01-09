@@ -1,6 +1,6 @@
 ---
 title: getEscrowsByBuyer
-description: Fetch all escrows where the specified address is the buyer
+description: "Palindrome Crypto Pay: Fetch all escrows where the specified address is the buyer. Query your purchase history from blockchain."
 ---
 
 ```ts

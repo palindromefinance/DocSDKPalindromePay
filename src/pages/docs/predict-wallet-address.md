@@ -1,6 +1,6 @@
 ---
 title: predictWalletAddress
-description: Predict the escrow wallet address before escrow creation using CREATE2
+description: "Palindrome Crypto Pay: Predict the escrow wallet address before escrow creation using CREATE2 deterministic deployment."
 ---
 
 ```ts

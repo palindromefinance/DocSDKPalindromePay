@@ -1,6 +1,6 @@
 ---
 title: withdraw
-description: Withdraw funds from an escrow wallet
+description: "Palindrome Crypto Pay: Withdraw funds from an escrow wallet after the deal is complete, refunded, or cancelled."
 ---
 
 ```ts

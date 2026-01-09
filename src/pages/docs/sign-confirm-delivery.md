@@ -1,6 +1,6 @@
 ---
 title: signConfirmDelivery
-description: Sign EIP-712 message for gasless confirm delivery
+description: "Palindrome Crypto Pay: Sign EIP-712 message for gasless confirm delivery. Enables buyers to confirm without paying gas fees."
 ---
 
 ```ts

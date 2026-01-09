@@ -1,6 +1,6 @@
 ---
 title: getUserNonce
-description: Get the next available nonce for a signer's signed transactions
+description: "Palindrome Crypto Pay: Get the next available nonce for a signer's signed transactions. Essential for gasless meta-transactions."
 ---
 
 ```ts

@@ -1,6 +1,6 @@
 ---
 title: startDisputeSigned
-description: Open a dispute using EIP-712 signature
+description: "Palindrome Crypto Pay: Open a dispute using EIP-712 signature for gasless meta-transaction. No gas fees for the dispute initiator."
 ---
 
 ```ts

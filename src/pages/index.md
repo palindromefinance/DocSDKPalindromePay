@@ -4,17 +4,15 @@ pageTitle: Crypto Pay & Escrow SDK | Palindrome Pay
 description: Add crypto payments + escrow to Shopify, real estate, or booking apps in minutes. Accept USDT coin – open source, secure, no middlemen.
 ---
 
-Palindrome Pay is a **crypto payment system with built-in escrow service** —
-built for developers who demand full control. Add 1-click checkout widgets
-to any site in minutes. Accept **USDT coin** with trustless security, no middlemen, and open-source code.
+Palindrome Pay is a **crypto payment system with built-in escrow service**.
 
 You have two integration options:
 
 **SDK** – for more advanced use cases and maximum flexibility.
 
-**Crypto Pay Button** – easy to integrate with just a few lines of code, using the Palindrome Pay Checkout system.
+**Palindrome Pay Button** – is a 1-Click Crypto Pay Button with built-in checkout system easy to integrate with just a few lines.
 
-Our Crypto Pay Button can be integrated into the following kinds of platforms, allowing users to seamlessly add crypto-based escrow payments to their existing workflows:
+The Palindrome Pay Button can be integrated into the following kinds of platforms, allowing users to seamlessly add crypto-based escrow payments to their existing workflows:
 
 - **E-commerce platforms such as Shopify and WooCommerce**
 - **Real estate platforms including property rental and sales marketplaces**
@@ -57,17 +55,17 @@ REACT_APP_USDT_TOKEN=0x337610d27c682E347C9cD60BD4b3b107C9d34dDd //this is USDT F
 
 With the Palindrome Pay Button, you can add ready‑made Crypto Pay buttons to your shop or booking system without building a custom checkout flow from scratch. As a merchant, you only place the button where your customer confirms the basket (products, services, or booking details) and pass a few required fields such as title, amount and your address (you will receive the funds).​
 
-When the button is clicked, your customer is redirected to the decentralized Checkout System, where they connect a wallet, review the order and complete a secure crypto payment. You can access the checkout at: [Palindrome Pay](https://palindromepay.com/crypto-pay)
+When the button is clicked, your customer is redirected to the decentralized Checkout System, where they connect a wallet, review the order and complete a secure crypto payment.
 
 Either with the SDK or the Crypto Pay Button, you and your customers can view and manage every payment transactions through the [Palindrome Crypto Escrow](https://palindromepay.com/crypto-escrow). 
 
-The flow is simple: the customer places an order and pays, the merchant delivers the goods or services, and the customer confirms that everything is satisfactory. Once confirmed, the merchant can withdraw the funds.
+The flow is simple: the customer places an order and deposit, the merchant delivers the goods or services, and the customer confirms that everything is satisfactory. Once confirmed, the merchant can withdraw the funds.
 
-At the Palindrome Crypto Esrow Dashboard customers can confirm delivery, cancel the order, or open a dispute. 
-Merchants can withdraw funds after successful verification, respond to disputes, and request order cancellation, which the customer can then approve.
+At the Palindrome Crypto Escrow platform customers can confirm delivery, cancel the order, or open a dispute. 
+Merchants can withdraw funds after successful verification, open a dispute, and request order cancellation, which the customer can then approve.
 
 
-### Integration code Crypto Pay Button
+### Integration code Palindrome Pay Button
 
 Add this code to your product page, checkout page or booking confirmation:
 
@@ -99,7 +97,7 @@ Add this code to your product page, checkout page or booking confirmation:
 <script src="https://palindromepay.com/widget.js" data-palindrome-endpoint="https://palindromepay.com/crypto-pay" defer></script>
 ```
 
-### Integration code Crypto Pay Button (Shopify)
+### Integration code Palindrome Pay Button (Shopify)
 
 Place this in product.liquid or a product section:
 
